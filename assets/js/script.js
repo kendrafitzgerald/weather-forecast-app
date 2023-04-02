@@ -10,4 +10,4 @@ $( function() {
   var windSpeed;
   var icon;
 
-  var queryUrl= "var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}"
+  var currentWeatherUrl= "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
