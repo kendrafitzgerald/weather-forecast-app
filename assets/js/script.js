@@ -1,8 +1,10 @@
 
 
   var APIKey= "0ca98b6a40434df572129e17e48d6ead";
-  var date;
   var icon;
+
+  //List of variables that correlate with city name and weather results for current day and 5 day forecast
+
   var cityName= document.querySelector("#search-result-name");
   var temp = document.querySelector("#temp");
   var humidity= document.querySelector("#humidity");
@@ -29,10 +31,11 @@
   var dayFourWind=document.querySelector("#dayFourWind");
   var dayFiveWind=document.querySelector("#dayFiveWind");
 
+  //Variable for search button element
   var searchButton = document.querySelector(".btn");
-
+  //Variable for search name input
   var searchName= document.querySelector("#inputCityName2");
-
+  //Function that runs once fetch request is called upon click, adds appropriate text content for weather conditions to page
   function forecast (data) {
    cityName.textContent= "Today's Weather In: " + data.city.name;
    temp.textContent= "Temp: " + data.list[0].main.temp + " °F";
@@ -64,15 +67,17 @@
    dayFiveWind.textContent= "Wind: " + data.list[35].wind.speed + " MPH";
    dayFiveHumidity.textContent= "Humidity: " + data.list[35].main.humidity + "%";
 
-  
-
-
-    console.log(data)
+  console.log(data)
     
 
   };
 
 
+
+
+
+
+  //Function with fetch request to get data from Open Weather API
   function getWeather (city) {
     fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=0ca98b6a40434df572129e17e48d6ead&units=imperial").then(function(response){
       return response.json()
@@ -83,7 +88,12 @@
 
 
 
-
+//Event listener so when the search button is clicked, user input triggers fetch request
   searchButton.addEventListener("click", function(event){
     getWeather(searchName.value);
+    var buttonList= document.querySelector(".savedButtons")
+    var savedCity= document.createElement("button");
+    savedCity.setAttribute("class", "savedCities")
+    savedCity.textContent = searchName.value;
+    buttonList.appendChild(savedCity);
   });

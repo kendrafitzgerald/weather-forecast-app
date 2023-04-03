@@ -9,3 +9,17 @@ background-color: #eec0c6;
 background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
 
 }
+
+.savedCities {
+    height: 50px;
+    width: 25%;
+    border-radius: 75px;
+    text-align: center;
+    background-color: #7ee8fa;
+    margin-left: -2%;
+}
+
+.savedCities:hover {
+    background-color:#eec0c6;
+    
+}
