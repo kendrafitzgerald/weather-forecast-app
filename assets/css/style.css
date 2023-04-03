@@ -9,12 +9,6 @@ background-color: #eec0c6;
 background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
 
 }
-
-.buttons {
-    display: flex;
-    flex-direction: column;
-
-}
 .savedCities {
     height: 50px;
     width: 25%;
@@ -22,7 +16,6 @@ background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
     text-align: center;
     background-color: #7ee8fa;
     margin-left: -2%;
-    align-items:baseline;
 }
 
 .savedCities:hover {
