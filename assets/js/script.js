@@ -15,10 +15,10 @@ $( function() {
   var searchName= document.querySelector("#inputCityName2");
 
   function todayForecast (data) {
-    cityName.textContent = data.name + " " + data.weather[0].icon;
-    temp.textContent = "Temp: " + data.main.temp + " °F";
-    wind.textContent= "Wind: " + data.wind.speed + " MPH";
-    humidity.textContent = "Humidity: " + data.main.humidity + " %";
+   cityName.textContent= data.city.name;
+   temp.textContent= "Temp: " + data.list[0].main.temp;
+   wind.textContent= "Wind: " + data.list[0].wind.speed + " MPH";
+   humidity.textContent="Humidity: " + data.list[0].main.humidity + "%";
 
 
     console.log(data)
@@ -26,28 +26,29 @@ $( function() {
 
   };
 
-  function futureForecast (data) {
+  // function futureForecast(data) {
 
-  };
+  // }
 
 
   function getWeather (city) {
-    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=0ca98b6a40434df572129e17e48d6ead").then(function(response){
+    fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=0ca98b6a40434df572129e17e48d6ead&units=imperial").then(function(response){
       return response.json()
     }).then(function(data){
       todayForecast(data);
     });
   };
-  function getForecast (lat, lon) {
-    fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + getWeather.data.coord.lat + "&lon=" + getWeather.data.coord.lon + "&appid=0ca98b6a40434df572129e17e48d6ead").then(function(response){
-      return response.json()
-    }).then(function(data){
-      futureForecast(data);
-      console.log(data);
-    });
-  };
+
+  // function getFuture (){
+  //   fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon+ "&appid=0ca98b6a40434df572129e17e48d6ead").then(function(response){
+  //     return response.json()
+  //   }).then(function(data){
+  //     futureForecast(data);
+  //   })
+  // }
+
 
   searchButton.addEventListener("click", function(event){
     getWeather(searchName.value);
-     getForecast(searchName.value);
+    // getForecast(searchName.value);
   });
