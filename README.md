@@ -6,7 +6,7 @@ My motivation constructing this project was to create a weather dashboard that d
 
 ## Usage
 
-To use this application, you simply type a city into the "Search for a City" input box as seen in the first image. Once typing in the city whose weather you wish to view, you click on the "Search" button and the current weather as well as a 5-day forecast is rendered on the page. Moreover, each city you search will appear as buttons under the search area of the page as seen in the second image. If you wish to see the weather and forecast of a previously searched city, simply click the button with the city name and that city's weather will be rendered on the page. The site utilizes local storage to save your input and render it on the page again.
+To use this application, you simply type a city into the "Search for a City" input box as seen in the first image. Once typing in the city whose weather you wish to view, you click on the "Search" button and the current weather as well as a 5-day forecast is rendered on the page. Moreover, each city you search will appear as buttons under the search area of the page as seen in the second image. If you wish to see the weather and forecast of a previously searched city, simply click the button with the city name and that city's weather will be rendered on the page. The site utilizes local storage to save your input and render it on the page again. Here is a link to my deployed site: https://kendrafitzgerald.github.io/weather-forecast-app/ .
 
 ![Homepage of weather dashboard site](./assets/images/homepageweather.png)
 
