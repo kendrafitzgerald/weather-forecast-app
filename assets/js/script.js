@@ -86,18 +86,29 @@
     });
   };
 
+//Event listener so when the search button is clicked, user input triggers fetch request
+  searchButton.addEventListener("click", function(event){
+    getWeather(searchName.value);
 
-  function localStorage() {
+  });
 
-  var buttonList= document.querySelector(".savedButtons");
+  var savedCityList= [];
+
+  function getStorage() {
+
+    var savedCities = JSON.parse(localStorage.getItem("cityArray"))
+
+    if (!savedCities) {
+      
+    }
+    for (var i = 0; i < savedCities.length; i++) {
+    }
+
+    var buttonList= document.querySelector(".savedButtons");
     var savedCity= document.createElement("button");
     savedCity.setAttribute("class", "savedCities");
     savedCity.textContent = searchName.value;
     buttonList.appendChild(savedCity);
 };
-
-//Event listener so when the search button is clicked, user input triggers fetch request
-  searchButton.addEventListener("click", function(event){
-    getWeather(searchName.value);
-    localStorage();
-  });
+  
+//todos activity
