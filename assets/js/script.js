@@ -34,33 +34,33 @@
   var searchName= document.querySelector("#inputCityName2");
 
   function forecast (data) {
-   cityName.textContent= data.city.name;
-   temp.textContent= "Temp: " + data.list[0].main.temp;
+   cityName.textContent= "Today's Weather In: " + data.city.name;
+   temp.textContent= "Temp: " + data.list[0].main.temp + " °F";
    wind.textContent= "Wind: " + data.list[0].wind.speed + " MPH";
    humidity.textContent="Humidity: " + data.list[0].main.humidity + "%";
 
    dayOneDate.textContent= data.list[3].dt_txt.slice(0, 11);
-   dayOneTemp.textContent= "Temp: " + data.list[3].main.temp;
+   dayOneTemp.textContent= "Temp: " + data.list[3].main.temp+ " °F";
    dayOneWind.textContent= "Wind: " + data.list[3].wind.speed + " MPH";
    dayOneHumidity.textContent= "Humidity: " + data.list[3].main.humidity + "%";
 
    dayTwoDate.textContent= data.list[11].dt_txt.slice(0, 11);
-   dayTwoTemp.textContent= "Temp: " + data.list[11].main.temp;
+   dayTwoTemp.textContent= "Temp: " + data.list[11].main.temp+ " °F";
    dayTwoWind.textContent= "Wind: " + data.list[11].wind.speed + " MPH";
    dayTwoHumidity.textContent= "Humidity: " + data.list[19].main.humidity + "%";
 
    dayThreeDate.textContent= data.list[19].dt_txt.slice(0, 11);
-   dayThreeTemp.textContent= "Temp: " + data.list[19].main.temp;
+   dayThreeTemp.textContent= "Temp: " + data.list[19].main.temp+ " °F";
    dayThreeWind.textContent= "Wind: " + data.list[19].wind.speed + " MPH";
    dayThreeHumidity.textContent= "Humidity: " + data.list[19].main.humidity + "%";
 
    dayFourDate.textContent= data.list[27].dt_txt.slice(0, 11);
-   dayFourTemp.textContent= "Temp: " + data.list[27].main.temp;
+   dayFourTemp.textContent= "Temp: " + data.list[27].main.temp+ " °F";
    dayFourWind.textContent= "Wind: " + data.list[27].wind.speed + " MPH";
    dayFourHumidity.textContent= "Humidity: " + data.list[27].main.humidity + "%";
 
    dayFiveDate.textContent= data.list[35].dt_txt.slice(0, 11);
-   dayFiveTemp.textContent= "Temp: " + data.list[35].main.temp;
+   dayFiveTemp.textContent= "Temp: " + data.list[35].main.temp+ " °F";
    dayFiveWind.textContent= "Wind: " + data.list[35].wind.speed + " MPH";
    dayFiveHumidity.textContent= "Humidity: " + data.list[35].main.humidity + "%";
 
