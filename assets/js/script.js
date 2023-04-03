@@ -26,9 +26,9 @@ $( function() {
 
   };
 
-  // function futureForecast (data) {
+  function futureForecast (data) {
 
-  // };
+  };
 
 
   function getWeather (city) {
@@ -38,16 +38,16 @@ $( function() {
       todayForecast(data);
     });
   };
-  // function getForecast (lat, lon) {
-  //   fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + getWeather.data.coord.lat + "&lon=" + getWeather.data.coord.lon + "&appid=0ca98b6a40434df572129e17e48d6ead").then(function(response){
-  //     return response.json()
-  //   }).then(function(data){
-  //     futureForecast(data);
-  //     console.log(data);
-  //   });
-  // };
+  function getForecast (lat, lon) {
+    fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + getWeather.data.coord.lat + "&lon=" + getWeather.data.coord.lon + "&appid=0ca98b6a40434df572129e17e48d6ead").then(function(response){
+      return response.json()
+    }).then(function(data){
+      futureForecast(data);
+      console.log(data);
+    });
+  };
 
   searchButton.addEventListener("click", function(event){
     getWeather(searchName.value);
-    // getForecast(searchName.value);
+     getForecast(searchName.value);
   });
