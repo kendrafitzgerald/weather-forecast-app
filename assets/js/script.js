@@ -87,13 +87,17 @@
   };
 
 
+  function localStorage() {
+
+  var buttonList= document.querySelector(".savedButtons");
+    var savedCity= document.createElement("button");
+    savedCity.setAttribute("class", "savedCities");
+    savedCity.textContent = searchName.value;
+    buttonList.appendChild(savedCity);
+};
 
 //Event listener so when the search button is clicked, user input triggers fetch request
   searchButton.addEventListener("click", function(event){
     getWeather(searchName.value);
-    var buttonList= document.querySelector(".savedButtons")
-    var savedCity= document.createElement("button");
-    savedCity.setAttribute("class", "savedCities")
-    savedCity.textContent = searchName.value;
-    buttonList.appendChild(savedCity);
+    localStorage();
   });
