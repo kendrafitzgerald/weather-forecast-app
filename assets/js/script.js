@@ -1,7 +1,6 @@
 
 
   var APIKey= "0ca98b6a40434df572129e17e48d6ead";
-  var icon;
 
   //List of variables that correlate with city name and weather results for current day and 5 day forecast
 
@@ -30,6 +29,12 @@
   var dayThreeWind=document.querySelector("#dayThreeWind");
   var dayFourWind=document.querySelector("#dayFourWind");
   var dayFiveWind=document.querySelector("#dayFiveWind");
+
+  var buttonList= document.querySelector(".savedButtons");
+
+
+
+
 
   //Variable for search button element
   var searchButton = document.querySelector(".btn");
@@ -86,29 +91,46 @@
     });
   };
 
+    var cityArray=[]
 //Event listener so when the search button is clicked, user input triggers fetch request
   searchButton.addEventListener("click", function(event){
     getWeather(searchName.value);
+    var cityArray=JSON.parse(localStorage.getItem("cityArray"))
+    if (!cityArray) {
+      cityArray=[]
+    }
+    var names=searchName.value
+    cityArray.push(names)
+    localStorage.setItem("cityArray", JSON.stringify(cityArray));
+    getStorage()
 
   });
 
-  var savedCityList= [];
-
   function getStorage() {
 
-    var savedCities = JSON.parse(localStorage.getItem("cityArray"))
+    var savedCities = JSON.parse(localStorage.getItem("cityArray"));
 
     if (!savedCities) {
-      
-    }
-    for (var i = 0; i < savedCities.length; i++) {
-    }
+      savedCities=[]
+  }
+  buttonList.innerHTML="";
 
-    var buttonList= document.querySelector(".savedButtons");
+
+    for (var i = 0; i< savedCities.length; i++) {
+
     var savedCity= document.createElement("button");
     savedCity.setAttribute("class", "savedCities");
-    savedCity.textContent = searchName.value;
-    buttonList.appendChild(savedCity);
+    savedCity.textContent = savedCities[i];
+    buttonList.appendChild(savedCity)
+      }
+
 };
-  
-//todos activity
+
+buttonList.addEventListener("click", function(event){
+  event.target
+  console.log(event.target)
+if (event.target.matches(".savedCities")) {
+  getWeather(event.target.textContent);
+  console.log(event.target.textContent)
+}
+})
