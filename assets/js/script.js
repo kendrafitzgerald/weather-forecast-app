@@ -41,30 +41,32 @@ $( function() {
    wind.textContent= "Wind: " + data.list[0].wind.speed + " MPH";
    humidity.textContent="Humidity: " + data.list[0].main.humidity + "%";
 
-   dayOneDate.textContent= data.list[1].dt_txt;
-   dayOneTemp.textContent= "Temp: " + data.list[1].main.temp;
-   dayOneWind.textContent= "Wind: " + data.list[1].wind.speed + " MPH";
-   dayOneHumidity.textContent= "Humidity: " + data.list[1].main.humidity + "%";
+   dayOneDate.textContent= data.list[3].dt_txt.slice(0, 11);
+   dayOneTemp.textContent= "Temp: " + data.list[3].main.temp;
+   dayOneWind.textContent= "Wind: " + data.list[3].wind.speed + " MPH";
+   dayOneHumidity.textContent= "Humidity: " + data.list[3].main.humidity + "%";
 
-   dayTwoDate.textContent= data.list[2].dt_txt;
-   dayTwoTemp.textContent= "Temp: " + data.list[2].main.temp;
-   dayTwoWind.textContent= "Wind: " + data.list[2].wind.speed + " MPH";
-   dayTwoHumidity.textContent= "Humidity: " + data.list[2].main.humidity + "%";
+   dayTwoDate.textContent= data.list[11].dt_txt.slice(0, 11);
+   dayTwoTemp.textContent= "Temp: " + data.list[11].main.temp;
+   dayTwoWind.textContent= "Wind: " + data.list[11].wind.speed + " MPH";
+   dayTwoHumidity.textContent= "Humidity: " + data.list[19].main.humidity + "%";
 
-   dayThreeDate.textContent= data.list[3].dt_txt;
-   dayThreeTemp.textContent= "Temp: " + data.list[3].main.temp;
-   dayThreeWind.textContent= "Wind: " + data.list[3].wind.speed + " MPH";
-   dayThreeHumidity.textContent= "Humidity: " + data.list[3].main.humidity + "%";
+   dayThreeDate.textContent= data.list[19].dt_txt.slice(0, 11);
+   dayThreeTemp.textContent= "Temp: " + data.list[19].main.temp;
+   dayThreeWind.textContent= "Wind: " + data.list[19].wind.speed + " MPH";
+   dayThreeHumidity.textContent= "Humidity: " + data.list[19].main.humidity + "%";
 
-   dayFourDate.textContent= data.list[4].dt_txt;
-   dayFourTemp.textContent= "Temp: " + data.list[4].main.temp;
-   dayFourWind.textContent= "Wind: " + data.list[4].wind.speed + " MPH";
-   dayFourHumidity.textContent= "Humidity: " + data.list[4].main.humidity + "%";
+   dayFourDate.textContent= data.list[27].dt_txt.slice(0, 11);
+   dayFourTemp.textContent= "Temp: " + data.list[27].main.temp;
+   dayFourWind.textContent= "Wind: " + data.list[27].wind.speed + " MPH";
+   dayFourHumidity.textContent= "Humidity: " + data.list[27].main.humidity + "%";
 
-   dayFiveDate.textContent= data.list[5].dt_txt;
-   dayFiveTemp.textContent= "Temp: " + data.list[5].main.temp;
-   dayFiveWind.textContent= "Wind: " + data.list[5].wind.speed + " MPH";
-   dayFiveHumidity.textContent= "Humidity: " + data.list[5].main.humidity + "%";
+   dayFiveDate.textContent= data.list[35].dt_txt.slice(0, 11);
+   dayFiveTemp.textContent= "Temp: " + data.list[35].main.temp;
+   dayFiveWind.textContent= "Wind: " + data.list[35].wind.speed + " MPH";
+   dayFiveHumidity.textContent= "Humidity: " + data.list[35].main.humidity + "%";
+
+  
 
 
     console.log(data)
